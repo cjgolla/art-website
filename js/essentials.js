@@ -65,7 +65,7 @@ const tagsContainer = document.querySelector(".tags-list");
 function loginSignUp(){
 
   /*variables */
-    const more = document.querySelector(".more-icon")
+
     const overlay = document.querySelector(".overlay")
     const dropdownItem = document.querySelector(".title-dropdown")
     overlay.classList.add('hide')
