@@ -47,7 +47,7 @@
 body{
     padding:10px;
     height:100%;
-    width:100%;
+   
     background: linear-gradient(rgb(39, 39, 39), rgb(38, 38, 38));
     background-size:cover;
     background-repeat: none;
