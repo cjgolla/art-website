@@ -415,7 +415,7 @@ const tagList = [
 
 
 images.forEach((img) =>{
-  grid.innerHTML += `<a href="#"><div style="background-image: url('${img.link}')" class="grid-item"></div></a>`
+  grid.innerHTML += `<a href="/pages/artwork-page/index.html"><div style="background-image: url('${img.link}')" class="grid-item"></div></a>`
 });
 
 ///// LOGIN BOX /////
