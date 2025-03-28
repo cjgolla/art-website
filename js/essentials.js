@@ -132,6 +132,8 @@ function signOut(){
   
   const signOutButton = document.createElement("div")
   signOutButton.classList.add("login-btn")
+  signOutButton.classList.add("sign-out")
+
   signOutButton.textContent = "SignOut"
   plusIcon.style.fontSize = '20px'
   mailIcon.innerHTML = `<span class="span-style">Mail</span><i class="ri-mail-line span-style"></i>`

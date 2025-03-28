@@ -41,7 +41,7 @@
     --blue2:rgb(55, 70, 205);
     --blue3:rgb(39, 42, 140);
 
-    --cyan1:rgb(184, 236, 255);
+    --cyan1:rgb(109, 216, 255);
 }
 
 
@@ -208,6 +208,7 @@ header{
     background-size: cover;
     display: flex;
     align-items: center;
+    position: relative;
 
 }
 .header-links{
@@ -220,11 +221,19 @@ header{
 .links-holder{
     justify-content: center;
     width:100%;
+    
     display: flex;
     align-items: center;
     color: var(--white1)
 }
 .link{
+    font-size: 1.2em;
+    margin:10px;
+    transition: color 0.3s linear;
+    cursor: pointer;
+}
+.link:hover{
+    color: var(--red1);
     font-size: 1.2em;
     margin:10px;
 }
@@ -233,7 +242,14 @@ header{
     margin-left:30px;
     font-size: 4em;
     color: var(--white1);
-    text-shadow: 3px 4px  10px black
+    text-shadow: 3px 4px  10px black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.artist-title:hover{
+    margin-bottom: 20px;
+    color: var(--red1)
 }
 .profile-pic{
     width:200px;
@@ -242,6 +258,17 @@ header{
     background-size:cover;
     border-radius:50%;
     margin-left: 10%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.profile-pic:hover{
+    margin-bottom: 20px;
+}
+
+.artist-title:hover ~ .profile-pic{
+
+    margin-bottom: 20px;
 }
 
 /*//////////// NAV BAR ////////////*/
@@ -311,18 +338,42 @@ header{
     color:var(--red1);
     font-size:1.2em;
     margin-right:5px;
-    
-    margin:0px 5px 0px 5px
+    cursor: pointer;
+    transition: all 0.3s;
+   
 }
+
+.login-btn:hover{
+    color: var(--cyan1);
+}
+
 .login-btn2{
     color:var(--white1);
     font-size:1.2em;
     margin-right:5px;
-    margin:0px 5px 0px 5px
+    margin:0px 5px 0px 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.login-btn2:hover{
+    color: var(--cyan1);
+}
+
+.sign-out{
+    cursor: pointer;
+    color: var(--red1);
+    transition: all 0.3s;
+}
+
+.sign-out:hover{
+    cursor: pointer;
+    color: rgb(48, 255, 255);
 }
 
 .more-icon{
     font-size:1.5em;
+    cursor: pointer;
 }
 
 #more-login-dropdown{
@@ -358,7 +409,8 @@ header{
     margin-bottom: 30px;
     margin-top: 2%;
     font-size: 1.2em;
-    transition:all 200ms;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 .span-style:hover {
     color: rgb(137, 212, 255);
@@ -373,8 +425,13 @@ header{
 
 .nav-item{
     margin-right:10px;
+    transition: all 0.3em;
+}
+
+.nav-item{
 
 }
+
 .search-bar{
    
     flex-grow: 2;
@@ -410,14 +467,17 @@ header{
     flex-direction: row-reverse;
     align-items: center;
     z-index: 5;
+    
 }
 
 .current-user-icon{
-    background-color: bisque;
-    width:30px;
-    height: 30px;
+    background-image: url('/artwork/img11.jpg');
+    background-size: cover;
+    width:50px;
+    height: 50px;
     border-radius: 50%;
     margin: 0px 10px 0px 10px; 
+    cursor: pointer;
 }
 
 /*//////////// SLIDER ////////////*/
@@ -588,7 +648,7 @@ header{
 /*//////////// FILTER ////////////*/
 
 .filter-box{
-    margin-top:10px;
+    margin: 10px 0px 10px 0px;
     border-radius:10px 10px 0 0;
     color:var(--cyan1);
     display: flex;
