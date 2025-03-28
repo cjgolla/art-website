@@ -83,7 +83,7 @@
     height:50px;
     border-radius: 50%;
     background-color: var(--white1);
-    
+    background-size: cover;
 }
 
 
@@ -147,7 +147,7 @@
 
 .comment-container{
     border-radius:10px;
-    background-color: var(--black5);
+    background-color: var(--black4);
     border:solid 2px hsla(0, 0%, 31%, 0.4);
     margin-bottom:30px;
     margin-top:30px;
