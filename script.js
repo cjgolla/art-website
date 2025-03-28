@@ -308,100 +308,48 @@ const imageSwiper = new Swiper('.wrapper', {
 
 const images = [
     {
-      link:"/artwork/img2.jpg",
+      link:"artwork/img2.jpg",
     },
     {
-      link:"/artwork/img1.jpg",
+      link:"artwork/img1.jpg",
     },
     {
-      link:"/artwork/img3.jpg",
+      link:"artwork/img3.jpg",
     },
     {
-      link:"/artwork/img4.jpg",
+      link:"artwork/img4.jpg",
     },
     {
-      link:"/artwork/img5.jpg",
+      link:"artwork/img5.jpg",
     },
     {
-      link:"/artwork/img6.jpg",
+      link:"artwork/img6.jpg",
     },
     {
-      link:"/artwork/img7.jpg",
+      link:"artwork/img7.jpg",
     },
     {
-      link:"/artwork/img8.jpg",
+      link:"artwork/img8.jpg",
     },
     {
-      link:"/artwork/img9.jpg",
+      link:"artwork/img9.jpg",
     },
     {
-      link:"/artwork/img10.jpg",
+      link:"artwork/img10.jpg",
     },
     
     {
-      link:"/artwork/img11.jpg",
+      link:"artwork/img11.jpg",
     },
     {
-      link:"/artwork/img15.jpg",
+      link:"artwork/img15.jpg",
     },
     {
-      link:"/artwork/img13.jpg",
+      link:"artwork/img13.jpg",
     },
     {
-      link:"/artwork/img14.jpg",
+      link:"artwork/img14.jpg",
     },
-    {
-      link:"/artwork/ismail-inceoglu-the-boy-who-cried-wolf.jpg",
-    },
-    {
-      link:"/artwork/lane-brown-dunedrifter-v2.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    {
-      link:"/artwork/img20.jpg",
-    },
-    
 
   ];
 
@@ -464,27 +412,6 @@ const tagList = [
   },
 
 ]
-
-
-
-// tagList.forEach((tag) =>{
-//   tagsContainer.innerHTML += `<div class="tag swiper-slide" style="width:50px;"><span class="tag-dec">${tag.name}</span></div>`
-// })
-
-// const tags = document.querySelectorAll(".tag");
-
-// tags.forEach((item) => {
-//   item.addEventListener('click', ()=>{
-//     item.classList.toggle("tag-toggle")
-//     tags.forEach((btn)=>{
-//       if(btn.classList.contains("tag-toggle") && !(btn===item)){
-//         btn.classList.toggle("tag-toggle");
-//       }
-//     })
-//     console.log("clicked")
-//   })
-// })
-
 
 
 images.forEach((img) =>{
