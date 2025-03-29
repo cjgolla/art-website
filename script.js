@@ -5,8 +5,13 @@
 // localStorage.setItem("currentUser", currentUserJSON)
 
 
+import {users, artwork} from "/art-website/userlist.js";
+
 let currentUser = JSON.parse(localStorage.getItem("currentUser"))
 console.log("The current user is: ", currentUser)
+
+console.log(artwork)
+console.log(users)
 
 
 const jsonRetrieval = localStorage.getItem("userlist")
@@ -16,6 +21,8 @@ let loginTabFlag = JSON.parse(jsonFlag)
 console.log(loginTabFlag)
 localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
 
+/* 
+
 const loginNav = (()=>{
   if(loginTabFlag === null){
     loginSignUp()
@@ -24,7 +31,7 @@ const loginNav = (()=>{
     signOut()
   }
 })();
-
+*/
 
 /////////LOGIN STUFF/////////////
 function inputStuff(){
@@ -414,8 +421,21 @@ const tagList = [
 ]
 
 
-images.forEach((img) =>{
-  grid.innerHTML += `<a href="/art-website/pages/artwork-page/index.html"><div style="background-image: url('${img.link}')" class="grid-item"></div></a>`
-});
+for(let art of Object.keys(artwork)){
+  console.log(art)
+  const link = document.createElement("a");
+  link.setAttribute('href', '/art-website/pages/artwork-page/index.html');
+  const img = document.createElement("div");
+  img.setAttribute('style', `background-image: url('/art-website/artwork/${art}')`)
+  img.classList.add("grid-item")
+  link.appendChild(img)
+  grid.appendChild(link)
+}
 
+
+/*
+images.forEach((img) =>{
+grid.innerHTML += `<a href="/art-website/pages/artwork-page/index.html"><div style="background-image: url('${img.link}')" class="grid-item"></div></a>`
+});
+*/
 ///// LOGIN BOX /////
