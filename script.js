@@ -5,7 +5,7 @@
 // localStorage.setItem("currentUser", currentUserJSON)
 
 
-import {users, artwork} from "/art-website/userlist.js";
+import {users, artwork, artwork2} from "/art-website/userlist.js";
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser"))
 console.log("The current user is: ", currentUser)
@@ -420,17 +420,43 @@ const tagList = [
 
 ]
 
-
+/*
 for(let art of Object.keys(artwork)){
-  console.log(art)
+ 
   const link = document.createElement("a");
   link.setAttribute('href', '/art-website/pages/artwork-page/index.html');
   const img = document.createElement("div");
+
+  link.addEventListener('click', ()=>{
+    localStorage.setItem("current-artwork", art)
+    localStorage.setItem('selected-user', artwork[art])
+  })
+
   img.setAttribute('style', `background-image: url('/art-website/artwork/${art}')`)
   img.classList.add("grid-item")
   link.appendChild(img)
   grid.appendChild(link)
 }
+*/
+
+for(let art of Object.keys(artwork2)){
+
+  const link = document.createElement("a");
+  link.setAttribute('href', '/art-website/pages/artwork-page/index.html');
+  const img = document.createElement("div");
+
+  link.addEventListener('click', ()=>{
+    
+    localStorage.setItem("current-artwork", artwork2[art].link)
+    localStorage.setItem('selected-user', artwork2[art].user)
+  })
+ 
+  img.setAttribute('style', `background-image: url('/art-website/artwork/${artwork2[art]['link']}')`)
+  img.classList.add("grid-item")
+  link.appendChild(img)
+  grid.appendChild(link)
+}
+
 
 
 /*

@@ -1,3 +1,18 @@
+
+const art = localStorage.getItem("current-artwork")
+
+const artElement = document.createElement("img");
+artElement.setAttribute('src', `/art-website/artwork/${art}`)
+artElement.classList.add("main-art-img")
+const wrap = document.querySelector(".main-art-wrapper");
+wrap.appendChild(artElement)
+
+const nameElement = localStorage.getItem("selected-user")
+console.log(nameElement)
+const nameHolder = document.querySelector(".name")
+nameHolder.textContent = nameElement;
+
+
 function Artwork(title, description, imageUrl, artistname, profilePic) {
     this.title = title;
     this.description = description;
