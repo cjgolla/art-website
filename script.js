@@ -439,6 +439,8 @@ for(let art of Object.keys(artwork)){
 }
 */
 
+
+
 for(let art of Object.keys(artwork2)){
 
   const link = document.createElement("a");

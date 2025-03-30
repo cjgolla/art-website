@@ -35,7 +35,7 @@ let users2 = {
     honeybuns: {
         username: "honeybuns",
         email: "honeybuns@gmail.com",
-        art: [{title: "Ranni with Boba", link: "img11.jpg"}, {title: "Eda the Owl Lady", link: "img12.jpg"}, {title: "Gura", link: "img13.jpg"}, {title: "Skulls", link: "img14.jpg"}, {title: "Roderika", link: "img15.jpg"}, 
+        art: [{title: "Ranni with Boba", link: "img11.jpg"}, {title: "Eda the Owl Lady", link: "img12.jpg"}, {title: "Gura2", link: "img13.jpg"}, {title: "Skulls", link: "img14.jpg"}, {title: "Roderika", link: "img15.jpg"}, 
             {title: "Ranni", link: "img16.jpg"}, {title: "Melina", link: "img17.jpg"}, {title: "Ina", link: "img18.jpg"}]
     },
     sonicfan123: {
@@ -56,7 +56,10 @@ function gatherArtwork(){
    
     let obj = {};
     for(let x of Object.keys(users)){
+        
         for(let j of Object.keys(users[x].art)){
+            
+           
             // console.log(users[x].art[j])
             obj =  {...obj, [users[x].art[j]] : x}
         }
@@ -71,8 +74,10 @@ function gatherArtwork2(){
     for(let x of Object.keys(users2)){
         let i = 0;
         for(let y of users2[x].art){
-
+            console.log('-')
+            console.log(x)
             obj = {...obj, [y.title]: {user: x, link: y.link}}
+            console.log(obj)
             i++;
             /*
             obj = {...obj, [x]: {title: y["title"]}}
