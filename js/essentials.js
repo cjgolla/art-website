@@ -25,6 +25,8 @@ const loginNav = (()=>{
 
 
 function submitInfo(){
+  const redText = document.querySelector('.redtext')
+  
   const userNameLogin = document.getElementById("username_login")
   const passwordLogin = document.getElementById("password_login")
   
@@ -43,6 +45,7 @@ function submitInfo(){
     i++
   }
   if(!flag){
+    redText.classList.add("display")
     console.log("Please enter correct info")
   }
 }

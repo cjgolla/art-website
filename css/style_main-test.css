@@ -33,7 +33,7 @@
 
     --red1:rgb(255, 134, 98);
     --red2:rgb(209, 55, 55);
-    --red2:rgb(176, 41, 41);
+    
 
     --orange1:rgb(255, 160, 65);
 
@@ -44,6 +44,10 @@
     --cyan1:rgb(109, 216, 255);
 }
 
+.redtext{
+    color: var(--red2);
+    display: none;
+}
 
 body{
     color: var(--white1);
