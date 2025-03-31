@@ -93,15 +93,7 @@ input, select{
 .hide{
     display: none;
 }
-.close{
-    display:block;
-    margin-right:auto;
-    margin-bottom: auto;
-    padding:20px 20px 0px;
-    font-size:2em;
-    cursor:pointer;
-    
-}
+
 
 ::placeholder{
     color: black;
@@ -815,10 +807,7 @@ footer{
         height:50px;
         width:260px;
      }
-     .close{
-        margin-top:20px;
-        margin-left:20px;
-     }
+     
     .img-wrapper .work-img{
         height:350px;
         border-radius: 10px;

@@ -107,17 +107,12 @@
 .img-enlarge{
     max-height:900px;
 }
-#img-enlarge-close{
-    cursor: pointer;
-}
+
 .artist-name > span{
     color: var(--red1);
     font-size: 1.5rem;
 }
-.img-close > i{
-   margin-top:20px;
-   display: block;
-}
+
 
 .like-share > i{
     margin:10px;

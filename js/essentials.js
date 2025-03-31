@@ -22,11 +22,35 @@ const loginNav = (()=>{
 
 
 /////////LOGIN STUFF/////////////
-function inputStuff(){
-  const loginInputs = document.querySelectorAll(".login-input")
-  let lastInput = null
+
+
+function submitInfo(){
   const userNameLogin = document.getElementById("username_login")
   const passwordLogin = document.getElementById("password_login")
+  
+  console.log(passwordLogin.value)
+  console.log(userNameLogin.value)
+  console.log("Poggers")
+  let flag = null
+  for (x of Object.keys(userlist)){
+    let i = 0
+    if(userlist[x]["username"] === userNameLogin.value && userlist[x]["password"] === passwordLogin.value){
+      localStorage.setItem("currentUser", JSON.stringify(userlist[x]))
+      loginTabFlag = 1
+      localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
+      location.reload()
+    }
+    i++
+  }
+  if(!flag){
+    console.log("Please enter correct info")
+  }
+}
+
+function inputStuff(){
+  const submitBtn = document.querySelector(".submit-button");
+  const loginInputs = document.querySelectorAll(".login-input")
+  let lastInput = null
   for(let input of loginInputs){
     input.addEventListener('focus', function(){
       if(lastInput && lastInput.value === ''){
@@ -36,26 +60,15 @@ function inputStuff(){
     })
     input.addEventListener('keydown', (event)=>{
       if(event.key === "Enter" ){
-          console.log(passwordLogin.value)
-          console.log(userNameLogin.value)
-          console.log("Poggers")
-          let flag = null
-          for (x of Object.keys(userlist)){
-            let i = 0
-            if(userlist[x]["username"] === userNameLogin.value && userlist[x]["password"] === passwordLogin.value){
-              localStorage.setItem("currentUser", JSON.stringify(userlist[x]))
-              loginTabFlag = 1
-              localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
-              location.reload()
-            }
-            i++
-          }
-          if(!flag){
-            console.log("Please enter correct info")
-          }
+           submitInfo()
       }
     })
+    
   }
+  submitBtn.addEventListener('click', ()=>{
+      submitInfo()
+  })
+  
 }
 inputStuff()
 const tagsContainer = document.querySelector(".tags-list");
@@ -96,11 +109,11 @@ function loginSignUp(){
     loginBox.appendChild(loginDropdown)
     loginDropdown.appendChild(login)
     loginDropdown.appendChild(signUp)
-    login
 
     /*event listeners */
     close.addEventListener('click', ()=>{
       loginTab.classList.toggle("display");
+      console.log("clicked")
     })
    
     moreIcon.addEventListener("click", ()=>{
@@ -110,7 +123,7 @@ function loginSignUp(){
     arrow.addEventListener("click", ()=>{
       dropdownItem.classList.toggle("display")
     })
-  
+
 }
 
 function signOut(){
