@@ -1,8 +1,24 @@
 ///////JSON LOCALSTORAGE/////////
 
+window.onload = function(){
+  const navBar = document.querySelector(".nav");
+  fetch('/art-website/html/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      navBar.innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navbar', error));
+  
+  const loginSignUpTab = document.querySelector(".login-tab");
+  fetch('/art-website/html/login-signup.html')
+    .then(response => response.text())
+    .then(data =>{
+      loginSignUpTab.innerHTML = data;
+
+
+      
 let currentUser = JSON.parse(localStorage.getItem("currentUser"))
 console.log("The current user is: ", currentUser)
-
 
 const jsonRetrieval = localStorage.getItem("userlist")
 const userlist = JSON.parse(jsonRetrieval)
@@ -91,7 +107,6 @@ function loginSignUp(){
     const moreIcon = document.createElement("div")
     moreIcon.innerHTML = `<i class="ri-more-2-fill more-icon" id="more-login-dropdown"></i>`
 
-    const loginWrapper = document.querySelector(".login")
     const loginTab = document.querySelector(".login-tab");
     const loginBox = document.querySelector(".login") 
     let login = document.createElement("div")
@@ -248,6 +263,10 @@ function signOut(){
   dropdown.appendChild(signOutButton)
   
 }
+})
+.catch(error => console.error(`Error loading login`, error))
+};
+
 const images = [
   {
     link:"artwork/img2.jpg",

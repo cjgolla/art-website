@@ -7,6 +7,11 @@
 
 import {users, artwork} from "/art-website/userlist.js";
 
+/////////GET NAVBAR INFO////////////
+
+
+
+
 let currentUser = JSON.parse(localStorage.getItem("currentUser"))
 console.log("The current user is: ", currentUser)
 
