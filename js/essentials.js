@@ -69,7 +69,7 @@ function loginSignUp(){
     const overlay = document.querySelector(".overlay")
     const dropdownItem = document.querySelector(".title-dropdown")
     overlay.classList.add('hide')
-    let close = document.querySelector(".close");
+    const close = document.querySelector(".close");
     const arrow = document.querySelector(".arrow")
 
     const moreIcon = document.createElement("div")

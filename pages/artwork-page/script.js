@@ -1,25 +1,35 @@
+import {users, artwork} from "/art-website/userlist.js";
+
+
+
+const url = new URL(window.location.href)
+
+const urlUser = url.searchParams.get("user")
+const urlLink = url.searchParams.get("link")
+const userObj = users[urlUser]
+console.log(artwork)
+const artworkTitle = artwork[urlLink].title
+console.log(artworkTitle)
+
+const titleHolder = document.querySelector(".main-art-title");
+titleHolder.textContent = artworkTitle;
 
 const art = localStorage.getItem("current-artwork")
 
 const artElement = document.createElement("img");
-artElement.setAttribute('src', `/art-website/artwork/${art}`)
+artElement.setAttribute('src', `/art-website/artwork/${urlLink}`)
 artElement.classList.add("main-art-img")
 const wrap = document.querySelector(".main-art-wrapper");
 wrap.appendChild(artElement)
 
 const nameElement = localStorage.getItem("selected-user")
-console.log(nameElement)
+
 const nameHolder = document.querySelector(".name")
-nameHolder.textContent = nameElement;
+nameHolder.textContent = urlUser;
 
 
-function Artwork(title, description, imageUrl, artistname, profilePic) {
-    this.title = title;
-    this.description = description;
-    this.imageUrl = imageUrl;
-    this.artistname = artistname;
-    this.profilepic = profilePic;
-}
+
+
 
 function Comment(name, comment, profilePic) {
     this.name = name;
@@ -81,23 +91,7 @@ Comment.prototype.addComment = function() {
     likeContainer.appendChild(replyIcon);
 
 }
-Artwork.prototype.display = function() {
-    const artworkDiv = document.getElementById("artwork");
-    const imgElement = document.querySelector(".main-art-img");
-    const titleElement = document.querySelector(".main-art-title");
-    const descriptionElement = document.querySelector(".art-description");
-    const artistName = document.querySelector(".name");
-    const profilePic = document.querySelector(".main-art-profile-pic");
 
-    imgElement.src = this.imageUrl;
-    titleElement.textContent = this.title;
-    descriptionElement.textContent = this.description;
-    artistName.textContent  = this.artistname;
-    profilePic.style.background = `url('${this.profilepic}')`; 
-    profilePic.style.backgroundSize = "cover";
-    profilePic.style.backgroundPosition = "center";
-
-}
 
 const commentList = [
     "This was a good work of Art!", "I met them in real life!", "Gorgeous", "The work of the devil!"
@@ -132,39 +126,13 @@ function createComments(commentArrayList, nameArrayList, profilePicList, numOfCo
 
 createComments(commentList, nameList,profilePicList, 4);
 
-// const comment1 = new Comment("Dave", "good work!");
-// const comment2 = new Comment("Michael", "This is exquisite!");
-// comment2.addComment();
-// comment1.addComment();
-
-
-const artwork1 = new Artwork("Evil woman burns house", "there may be something wrong with this woman","/artwork/img2.jpg", "coolartist", "/profile-pics/img11.jpg");
-const artwork2 = new Artwork("Goddess", "she's baller af","/artwork/img6.png", "artperson444", "/profile-pics/img21.jpg");
-const artwork3 = new Artwork("Little Girl Giant Mouse", "We should probably watch our step","/artwork/img11.jpg", "theartist101", "/profile-pics/img25.jpg");
-
-
-const artworkList = [artwork1, artwork2, artwork3]
-
 function displayMainArt(arr){
     let randNum = Math.floor(Math.random()*(arr.length));
     arr[randNum].display()
 }
 
 
-
-
-
-
-const mainImage = document.querySelector(".main-art-img");
-const mainImageEnlarge = document.querySelector(".img-enlarge-container");
-const imageEnlargeClose = document.getElementById("img-enlarge-close");
-
-
-
 mainImage.addEventListener('click', ()=>{
     mainImageEnlarge.classList.toggle("display");
 })
 
-imageEnlargeClose.addEventListener('click', ()=>{
-    mainImageEnlarge.classList.toggle("display");
-})

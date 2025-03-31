@@ -5,7 +5,7 @@
 // localStorage.setItem("currentUser", currentUserJSON)
 
 
-import {users, artwork, artwork2} from "/art-website/userlist.js";
+import {users, artwork} from "/art-website/userlist.js";
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser"))
 console.log("The current user is: ", currentUser)
@@ -441,19 +441,19 @@ for(let art of Object.keys(artwork)){
 
 
 
-for(let art of Object.keys(artwork2)){
+for(let art of Object.keys(artwork)){
 
   const link = document.createElement("a");
-  link.setAttribute('href', '/art-website/pages/artwork-page/index.html');
+  link.setAttribute('href', `/art-website/pages/artwork-page/index.html?user=${artwork[art].user}&link=${artwork[art].link}`);
   const img = document.createElement("div");
 
   link.addEventListener('click', ()=>{
     
-    localStorage.setItem("current-artwork", artwork2[art].link)
-    localStorage.setItem('selected-user', artwork2[art].user)
+    localStorage.setItem("current-artwork", artwork[art].link)
+    localStorage.setItem('selected-user', artwork[art].user)
   })
  
-  img.setAttribute('style', `background-image: url('/art-website/artwork/${artwork2[art]['link']}')`)
+  img.setAttribute('style', `background-image: url('/art-website/artwork/${artwork[art]['link']}')`)
   img.classList.add("grid-item")
   link.appendChild(img)
   grid.appendChild(link)

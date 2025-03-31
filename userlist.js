@@ -1,42 +1,33 @@
+
+
 let users = {
     destroyer291: {
         username: "destroyer",
         email: "destroyer34@gmail.com",
         password: "notdestroyer",
-        art: ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", "img7.jpg", "img8.jpg", "img9.jpg","img10.jpg",  ]
+        art: [{id: 'img1.jpg', title: "Blaidd", link: "img1.jpg"}, 
+            {id: '123456789', title: "Ina", link: "img2.jpg"}, 
+            {id: '123435425', title: "Sana", link: "img3.jpg"}, 
+            {id: '153495425', title: "Gura", link: "img4.jpg"}, 
+            {id: '223433445', title: "Melina", link:"img5.jpg"}, 
+            {id: '323335425', title: "Miquella", link: "img6.jpg"}, 
+            {id: '663435425', title: "Suko", link: "img7.jpg"}, 
+            {id: '623470425', title: "Suko2", link: "img8.jpg"}, 
+            {id: '398435425', title: "Fauna", link: "img9.jpg"}, 
+            {id: '632225425', title: "Moonlight", link: "img10.jpg"}] 
     },
     honeybuns: {
         username: "honeybuns",
         email: "honeybuns@gmail.com",
-        art: ["img11.jpg", "img12.jpg", "img13.jpg", "img14.jpg", "img15.jpg", "img16.jpg", "img17.jpg", "img18.jpg", "img19.jpg", "img20.jpg", ]
-    },
-    sonicfan123: {
-        username: "sonicfan123",
-        email: "sonicfan123@gmail.com",
-        password: "scourgefan",
-        art: ['']
-    },
-    gobthegreat: {
-        username: "gobthegreat",
-        email: "gobthegreat@gmail.com",
-        password: "12345",
-        art: [''],
-    },
-}
-
-let users2 = {
-    destroyer291: {
-        username: "destroyer",
-        email: "destroyer34@gmail.com",
-        password: "notdestroyer",
-        art: [{title: "Blaidd", link: "img1.jpg"}, {title: "Ina", link: "img2.jpg"}, {title: "Sana", link: "img3.jpg"}, {title: "Gura", link: "img4.jpg"}, {title: "Melina", link:"img5.jpg"}, 
-            {title: "Miquella", link: "img6.jpg"}, {title: "Suko", link: "img7.jpg"}, {title: "Suko2", link: "img8.jpg"}, {title: "Fauna", link: "img9.jpg"}, {title: "Moonlight", link: "img10.jpg"}] 
-    },
-    honeybuns: {
-        username: "honeybuns",
-        email: "honeybuns@gmail.com",
-        art: [{title: "Ranni with Boba", link: "img11.jpg"}, {title: "Eda the Owl Lady", link: "img12.jpg"}, {title: "Gura2", link: "img13.jpg"}, {title: "Skulls", link: "img14.jpg"}, {title: "Roderika", link: "img15.jpg"}, 
-            {title: "Ranni", link: "img16.jpg"}, {title: "Melina", link: "img17.jpg"}, {title: "Ina", link: "img18.jpg"}]
+        art: [{id: '123856789', title: "Ranni with Boba",
+            link: "img11.jpg"}, 
+            {id: '397536789', title: "Eda the Owl Lady", link: "img12.jpg"}, 
+            {id: '226596789', title: "Gura2", link: "img13.jpg"}, 
+            {id: '594334689', title: "Skulls", link: "img14.jpg"}, 
+            {id: '460536789', title: "Roderika", link: "img15.jpg"}, 
+            {id: '823337476', title: "Ranni", link: "img16.jpg"}, 
+            {id: '953936779', title: "Melina", link: "img17.jpg"}, 
+            {id: '256786789', title: "Ina", link: "img18.jpg"}]
     },
     sonicfan123: {
         username: "sonicfan123",
@@ -52,32 +43,32 @@ let users2 = {
     },
 }
 
+/*
+
 function gatherArtwork(){
    
     let obj = {};
     for(let x of Object.keys(users)){
         
         for(let j of Object.keys(users[x].art)){
-            
-           
-            // console.log(users[x].art[j])
+
+
             obj =  {...obj, [users[x].art[j]] : x}
         }
     }
     
     return obj;
 }
-
-function gatherArtwork2(){
+*/
+function gatherArtwork(){
    
     let obj = {};
-    for(let x of Object.keys(users2)){
+    for(let x of Object.keys(users)){
         let i = 0;
-        for(let y of users2[x].art){
-            console.log('-')
-            console.log(x)
-            obj = {...obj, [y.title]: {user: x, link: y.link}}
-            console.log(obj)
+        for(let y of users[x].art){
+           
+            obj = {...obj, [y.link]: {user: x, link: y.link, id: y.id, title: y.title}}
+            
             i++;
             /*
             obj = {...obj, [x]: {title: y["title"]}}
@@ -85,20 +76,15 @@ function gatherArtwork2(){
            
         }
     }
+    console.log(obj)
     
     return obj;
     
     
 }
 
-const artwork = gatherArtwork()
 
-const artwork2 = gatherArtwork2()
-
-console.log(artwork2)
-
-
-console.log(artwork["img1.jpg"])
+const artwork= gatherArtwork()
 
 
 // let usersStringed = JSON.stringify(users)
@@ -112,11 +98,11 @@ console.log(artwork["img1.jpg"])
 //     newUser.password = password
     
 //     const newUsers = {...list, [username]: newUser} 
-//     console.log(newUsers)
+
 //     return(newUsers)
 // }
 
 // users = addUser("magicgirl4", "magicgirl4@gmail.com", "12345", users)
 // users = addUser("curseyoubale", "magicgirl4@gmail.com", "12345", users)
 
-export {users, artwork, artwork2};
+export {users, artwork};

@@ -102,9 +102,7 @@
     display: flex;
     justify-content: center;
 }
-.display{
-    display:block;
-}
+
 
 .img-enlarge{
     max-height:900px;
