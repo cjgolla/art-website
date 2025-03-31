@@ -5,7 +5,9 @@
     list-style:none;
     font-family: "Inter", serif;
 }
-
+a{
+    color: inherit;
+}
 :root{
 
     font-family: "Inter", serif;

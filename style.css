@@ -6,6 +6,10 @@
     font-family: "Inter", serif;
 }
 
+a:link{
+    text-decoration: none;
+}
+
 :root{
 
     font-family: "Inter", serif;
@@ -51,6 +55,7 @@ body{
     background: linear-gradient(rgb(39, 39, 39), rgb(38, 38, 38));
     background-size:cover;
     background-repeat: none;
+    text-decoration: none;
 }
 /*//////////// LOGIN ////////////*/
 .login-tab{

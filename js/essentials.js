@@ -167,6 +167,15 @@ function signOut(){
   })
 
   const body = document.body
+
+  //////////// NAVBAR ///////////
+
+  const navTitle = document.querySelector(".title")
+  navTitle.addEventListener("click", ()=>{
+    
+  })
+
+
   /*/////////DROPDOWN//////////*/
 
   const overlay = document.querySelector(".overlay")
