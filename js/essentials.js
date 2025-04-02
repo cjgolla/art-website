@@ -1,11 +1,12 @@
 ///////JSON LOCALSTORAGE/////////
 
-if (localStorage.getItem('loginTablFlag')===null) {
-  localStorage.setItem('loginTabFlag', null)
-}
 
 
 window.onload = function(){
+  if (localStorage.getItem('loginTablFlag')===null) {
+    localStorage.setItem('loginTabFlag', null)
+  }
+  
   const navBar = document.querySelector(".nav");
   fetch('/art-website/html/navbar.html')
     .then(response => response.text())
