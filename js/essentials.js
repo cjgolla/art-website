@@ -42,7 +42,6 @@ const loginNav = (()=>{
 
 function submitInfo(){
   const redText = document.querySelector('.redtext')
-  
   const userNameLogin = document.getElementById("username_login")
   const passwordLogin = document.getElementById("password_login")
   
@@ -53,6 +52,7 @@ function submitInfo(){
   for (x of Object.keys(userlist)){
     let i = 0
     if(userlist[x]["username"] === userNameLogin.value && userlist[x]["password"] === passwordLogin.value){
+      
       localStorage.setItem("currentUser", JSON.stringify(userlist[x]))
       loginTabFlag = 1
       localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
@@ -61,13 +61,49 @@ function submitInfo(){
     i++
   }
   if(!flag){
-    redText.classList.add("display")
-    console.log("Please enter correct info")
+    redText.classList.remove("hide")
+    redText.textContent = "enter correct info"
   }
 }
 
+function signUp(){
+  const redText = document.querySelector('.redtext');
+  redText.textContent = "Username taken"
+  const username = document.getElementById('signup-username');
+  const email = document.getElementById('signup-email');
+  const password = document.getElementById('signup-password');
+  const reEnterPassword = document.getElementById('signup-reenter-password');
+
+  for(x of Object.keys(userlist)){
+    let i = 0;
+    if(userlist[x]['username'] === username.value || userlist[x]['password'] === password.value){
+      redText.style.display = "block";
+      return;
+    }
+    else if(username.value === '' || password.value === ''){
+      redText.textContent = "fill in all boxes"
+      redText.classList.remove("hide")
+      console.log("redtext")
+      return;
+    }
+    else if(!validateEmail(email.value)){
+      redText.textContent = "type in valid email"
+      redText.classList.remove("hide")
+    }
+
+  }
+}
+
+function validateEmail(email){
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 function inputStuff(){
-  const submitBtn = document.querySelector(".submit-button");
+  const loginBtn = document.getElementById("login-submit-btn");
+  const signUpBtn = document.getElementById("signup-submit-btn")
+  const usernameInput = document.querySelector(".username")
+  const passwordInput = document.querySelector(".password")
   const loginInputs = document.querySelectorAll(".login-input")
   let lastInput = null
   for(let input of loginInputs){
@@ -84,8 +120,11 @@ function inputStuff(){
     })
     
   }
-  submitBtn.addEventListener('click', ()=>{
+  loginBtn.addEventListener('click', ()=>{
       submitInfo()
+  })
+  signUpBtn.addEventListener('click', ()=>{
+    signUp();
   })
   
 }
@@ -97,12 +136,25 @@ const tagsContainer = document.querySelector(".tags-list");
 function loginSignUp(){
 
   /*variables */
+    
+    const redText = document.querySelector('.redtext')
+    const loginBtn = document.getElementById("login-submit-btn");
+    const signUpBtn = document.getElementById("signup-submit-btn");
 
     const overlay = document.querySelector(".overlay")
     const dropdownItem = document.querySelector(".title-dropdown")
     overlay.classList.add('hide')
-    const close = document.querySelector(".close");
+    const closeLogin = document.getElementById("close-login");
+    const closeSignup = document.getElementById("close-signup");
+
     const arrow = document.querySelector(".arrow")
+
+    const loginInput  = document.querySelectorAll('.login-input')
+    console.log(loginInput)
+    const signUpInput = document.querySelectorAll(".signup")
+    console.log(signUpInput)
+    const loginText = document.querySelector(".login-text");
+
 
     const moreIcon = document.createElement("div")
     moreIcon.innerHTML = `<i class="ri-more-2-fill more-icon" id="more-login-dropdown"></i>`
@@ -111,11 +163,8 @@ function loginSignUp(){
     const loginBox = document.querySelector(".login") 
     let login = document.createElement("div")
 
-    login.addEventListener("click", ()=>{
-      loginTab.classList.toggle("display")
-    })
-    login.classList.add("login-btn2")
-    login.textContent="Login"
+    
+
 
     let signUp = document.createElement("div")
     signUp.classList.add("login-btn")
@@ -129,9 +178,47 @@ function loginSignUp(){
     loginDropdown.appendChild(signUp)
 
     /*event listeners */
-    close.addEventListener('click', ()=>{
-      loginTab.classList.toggle("display");
+    login.addEventListener("click", ()=>{
+          closeLogin.classList.toggle("hide");
+          loginTab.classList.toggle("hide");
+          loginInput.forEach((x)=>{
+            x.classList.toggle("hide")
+          })
+          loginText.textContent = "Login";
+          loginBtn.classList.toggle('hide')
+    })
+    login.classList.add("login-btn2")
+    login.textContent="Login"
+
+    signUp.addEventListener('click', ()=>{
+      closeSignup.classList.toggle("hide")
+      loginTab.classList.toggle("hide")
+      signUpInput.forEach((x)=>{
+        x.classList.toggle('hide')
+      })
+      loginText.textContent = "Sign Up";
+      signUpBtn.classList.toggle('hide');
+    })
+
+    closeLogin.addEventListener('click', ()=>{
+      redText.classList.add("hide")
+      loginTab.classList.toggle("hide");
+      loginInput.forEach((x)=>{
+        x.classList.toggle("hide")
+      })
+      closeLogin.classList.toggle('hide')
+      loginBtn.classList.toggle('hide')
+    })
+  
+    closeSignup.addEventListener('click', ()=>{
+      redText.classList.add("hide")
+      closeSignup.classList.toggle('hide')
       console.log("clicked")
+      loginTab.classList.toggle("hide");
+      signUpInput.forEach((x)=>{
+        x.classList.toggle("hide")
+      })
+      signUpBtn.classList.toggle('hide')
     })
    
     moreIcon.addEventListener("click", ()=>{

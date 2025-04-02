@@ -1,18 +1,38 @@
 <div class="login-wrapper">
-    <div class="close"><i class="ri-close-large-line"></i></div>
+    <div class="close hide" id="close-login"><i class="ri-close-large-line"></i></div>
+    <div class="close hide" id="close-signup"><i class="ri-close-large-line"></i></div>
     <div class="login-input-box">
         <li class="title login-title">ArtHub</li>
-        <span class="redtext">please enter correct info</span>
+        <span class="redtext hide">please enter correct info</span>
         <div class="login-password-container">
             <div class="login-text">Login</div>
+
             <div class="username">
-                <input class="login-input" name = "username" id="username_login" placeholder="username">
+                <input class="login-input text-input  hide" name = "username" id="username_login" placeholder="username">
             </div>
             <div class="password">
-                <input class="login-input" name = "password"id="password_login" placeholder="password">
+                <input class="login-input text-input hide" name = "password"id="password_login" placeholder="password">
+            </div>
+
+            <div class="signup hide">
+                <input class="signup-input text-input" name = "inputname" id="signup-username" placeholder="username">
+            </div>
+
+            <div class="signup hide">
+                <input class="signup-input text-input " name = "inputname" id="signup-email" placeholder="email">
+            </div>
+
+            <div class="signup hide">
+                <input class="signup-input text-input " name = "inputname" id="signup-password" placeholder="password">
+            </div>
+
+            <div class="signup hide">
+    
+                <input class="signup-input text-input " name = "inputname" id="signup-reenter-password" placeholder="re-enter password">
             </div>
             <div class="submit-login">
-            <button class="submit-button" type="button" placeholder="submit">Submit</button>
+            <button class="submit-button hide" type="button" placeholder="submit" id="login-submit-btn">Login</button>
+            <button class="submit-button hide" type="button" placeholder="submit" id="signup-submit-btn">Sign Up</button>
         </div>
         </div>
             <div class="social-media-login">
@@ -22,4 +42,5 @@
         </div>
     </div>
 </div>
+<div class="overlay"></div>
 <script src="/art-website/js/essentials.js"></script>
