@@ -48,6 +48,10 @@ const loginNav = (()=>{
 
 function submitInfo(){
   const redText = document.querySelector('.redtext')
+    redText.classList.remove("hide")
+    redText.textContent = "test to see if buttons work correct info"
+
+  /*
   const userNameLogin = document.getElementById("username_login")
   const passwordLogin = document.getElementById("password_login")
   
@@ -70,11 +74,16 @@ function submitInfo(){
     redText.classList.remove("hide")
     redText.textContent = "enter correct info"
   }
+    */
 }
 
 function signUp(){
   const redText = document.querySelector('.redtext');
   redText.textContent = "Username taken"
+    redText.classList.remove("hide")
+    redText.textContent = "test to see if buttons work correct info"
+
+  /*
   const username = document.getElementById('signup-username');
   const email = document.getElementById('signup-email');
   const password = document.getElementById('signup-password');
@@ -98,6 +107,7 @@ function signUp(){
     }
 
   }
+    */
 }
 
 function validateEmail(email){
@@ -108,8 +118,6 @@ function validateEmail(email){
 function inputStuff(){
   const loginBtn = document.getElementById("login-submit-btn");
   const signUpBtn = document.getElementById("signup-submit-btn")
-  const usernameInput = document.querySelector(".username")
-  const passwordInput = document.querySelector(".password")
   const loginInputs = document.querySelectorAll(".login-input")
   let lastInput = null
 
@@ -123,17 +131,26 @@ function inputStuff(){
     
     input.addEventListener('keydown', (event)=>{
       if(event.key === "Enter" ){
-           submitInfo()
+          const redText = document.querySelector(".redtext")
+          redText.classList.remove("hide")
+          redText.textContent = "test to see if buttons work correct info"
+           //submitInfo()
       }
     })  
   }
 
   loginBtn.addEventListener('click', ()=>{
-      submitInfo()
+      //submitInfo()
+      const redText = document.querySelector(".redtext")
+          redText.classList.remove("hide")
+          redText.textContent = "test to see if buttons work correct info"
   })
 
   signUpBtn.addEventListener('click', ()=>{
-    signUp();
+    //signUp();
+    const redText = document.querySelector(".redtext")
+          redText.classList.remove("hide")
+          redText.textContent = "test to see if buttons work correct info"
   })
   
 }
