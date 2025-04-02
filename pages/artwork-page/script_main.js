@@ -101,7 +101,7 @@ function loginSignUp(){
     loginBox.appendChild(loginDropdown)
     loginDropdown.appendChild(login)
     loginDropdown.appendChild(signUp)
-    login
+  
 
     /*event listeners */
     close.addEventListener('click', ()=>{

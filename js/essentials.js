@@ -106,6 +106,7 @@ function inputStuff(){
   const passwordInput = document.querySelector(".password")
   const loginInputs = document.querySelectorAll(".login-input")
   let lastInput = null
+
   for(let input of loginInputs){
     input.addEventListener('focus', function(){
       if(lastInput && lastInput.value === ''){
@@ -113,16 +114,18 @@ function inputStuff(){
       }
       lastInput = input
     })
+    
     input.addEventListener('keydown', (event)=>{
       if(event.key === "Enter" ){
            submitInfo()
       }
-    })
-    
+    })  
   }
+
   loginBtn.addEventListener('click', ()=>{
       submitInfo()
   })
+
   signUpBtn.addEventListener('click', ()=>{
     signUp();
   })
