@@ -1,7 +1,7 @@
 ///////JSON LOCALSTORAGE/////////
 
 if (localStorage.getItem('loginTablFlag')===null) {
-  localStorage.setItem('loginTabFlac', null)
+  localStorage.setItem('loginTabFlag', null)
 }
 
 
