@@ -46,36 +46,7 @@ const loginNav = (()=>{
 /////////LOGIN STUFF/////////////
 
 
-function submitInfo(){
-  const redText = document.querySelector('.redtext')
-    redText.classList.remove("hide")
-    redText.textContent = "test to see if buttons work correct info"
 
-  /*
-  const userNameLogin = document.getElementById("username_login")
-  const passwordLogin = document.getElementById("password_login")
-  
-  console.log(passwordLogin.value)
-  console.log(userNameLogin.value)
-  console.log("Poggers")
-  let flag = null
-  for (x of Object.keys(userlist)){
-    let i = 0
-    if(userlist[x]["username"] === userNameLogin.value && userlist[x]["password"] === passwordLogin.value){
-      
-      localStorage.setItem("currentUser", JSON.stringify(userlist[x]))
-      loginTabFlag = 1
-      localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
-      location.reload()
-    }
-    i++
-  }
-  if(!flag){
-    redText.classList.remove("hide")
-    redText.textContent = "enter correct info"
-  }
-    */
-}
 
 function signUp(){
   const redText = document.querySelector('.redtext');
@@ -140,10 +111,12 @@ function inputStuff(){
   }
 
   loginBtn.addEventListener('click', ()=>{
-      //submitInfo()
+      submitInfo()
+/*
       const redText = document.querySelector(".redtext")
           redText.classList.remove("hide")
           redText.textContent = "test to see if buttons work correct info"
+*/
   })
 
   signUpBtn.addEventListener('click', ()=>{
@@ -154,6 +127,39 @@ function inputStuff(){
   })
   
 }
+
+function submitInfo(){
+  const redText = document.querySelector('.redtext')
+    redText.classList.remove("hide")
+    redText.textContent = "test to see if buttons work correct info"
+
+  /*
+  const userNameLogin = document.getElementById("username_login")
+  const passwordLogin = document.getElementById("password_login")
+  
+  console.log(passwordLogin.value)
+  console.log(userNameLogin.value)
+  console.log("Poggers")
+  let flag = null
+  for (x of Object.keys(userlist)){
+    let i = 0
+    if(userlist[x]["username"] === userNameLogin.value && userlist[x]["password"] === passwordLogin.value){
+      
+      localStorage.setItem("currentUser", JSON.stringify(userlist[x]))
+      loginTabFlag = 1
+      localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
+      location.reload()
+    }
+    i++
+  }
+  if(!flag){
+    redText.classList.remove("hide")
+    redText.textContent = "enter correct info"
+  }
+    */
+}
+
+
 inputStuff()
 const tagsContainer = document.querySelector(".tags-list");
 
