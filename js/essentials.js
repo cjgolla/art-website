@@ -1,5 +1,10 @@
 ///////JSON LOCALSTORAGE/////////
 
+if (localStorage.getItem('loginTablFlag')===null) {
+  localStorage.setItem('loginTabFlac', null)
+}
+
+
 window.onload = function(){
   const navBar = document.querySelector(".nav");
   fetch('/art-website/html/navbar.html')
