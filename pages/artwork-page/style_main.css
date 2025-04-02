@@ -127,6 +127,7 @@ input, select{
     border:none;
     font-family: "Inter", serif;
     border-radius: 5px;
+    z-index: 9;
 }
 .google{
     border: solid var(--white3);

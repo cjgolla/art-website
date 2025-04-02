@@ -173,6 +173,7 @@ input, select{
     font-family: "Inter", serif;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 9;
 }
 
 .submit-button:hover{
