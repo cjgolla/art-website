@@ -49,12 +49,7 @@ const loginNav = (()=>{
 
 
 function signUp(){
-  const redText = document.querySelector('.redtext');
-  redText.textContent = "Username taken"
-    redText.classList.remove("hide")
-    redText.textContent = "test to see if buttons work correct info"
 
-  /*
   const username = document.getElementById('signup-username');
   const email = document.getElementById('signup-email');
   const password = document.getElementById('signup-password');
@@ -78,7 +73,7 @@ function signUp(){
     }
 
   }
-    */
+    
 }
 
 function validateEmail(email){
@@ -102,28 +97,18 @@ function inputStuff(){
     
     input.addEventListener('keydown', (event)=>{
       if(event.key === "Enter" ){
-          const redText = document.querySelector(".redtext")
-          redText.classList.remove("hide")
-          redText.textContent = "test to see if buttons work correct info"
-           //submitInfo()
+           submitInfo()
       }
     })  
   }
 
   loginBtn.addEventListener('click', ()=>{
       submitInfo()
-/*
-      const redText = document.querySelector(".redtext")
-          redText.classList.remove("hide")
-          redText.textContent = "test to see if buttons work correct info"
-*/
+
   })
 
   signUpBtn.addEventListener('click', ()=>{
-    //signUp();
-    const redText = document.querySelector(".redtext")
-          redText.classList.remove("hide")
-          redText.textContent = "test to see if buttons work correct info"
+    signUp();
   })
   
 }
@@ -133,7 +118,7 @@ function submitInfo(){
     redText.classList.remove("hide")
     redText.textContent = "test to see if buttons work correct info"
 
-  /*
+
   const userNameLogin = document.getElementById("username_login")
   const passwordLogin = document.getElementById("password_login")
   
@@ -156,7 +141,7 @@ function submitInfo(){
     redText.classList.remove("hide")
     redText.textContent = "enter correct info"
   }
-    */
+   
 }
 
 
