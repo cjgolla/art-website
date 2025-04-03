@@ -49,7 +49,7 @@ const loginNav = (()=>{
 
 
 function signUp(){
-
+  const redText = document.querySelector(".redtext")
   const username = document.getElementById('signup-username');
   const email = document.getElementById('signup-email');
   const password = document.getElementById('signup-password');
