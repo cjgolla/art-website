@@ -1,5 +1,3 @@
-
-
 let users = {
     destroyer291: {
         username: "destroyer",
@@ -43,23 +41,6 @@ let users = {
     },
 }
 
-/*
-
-function gatherArtwork(){
-   
-    let obj = {};
-    for(let x of Object.keys(users)){
-        
-        for(let j of Object.keys(users[x].art)){
-
-
-            obj =  {...obj, [users[x].art[j]] : x}
-        }
-    }
-    
-    return obj;
-}
-*/
 function gatherArtwork(){
    
     let obj = {};
@@ -79,30 +60,8 @@ function gatherArtwork(){
     console.log(obj)
     
     return obj;
-    
-    
 }
 
-
 const artwork= gatherArtwork()
-
-
-// let usersStringed = JSON.stringify(users)
-// localStorage.setItem("userlist", usersStringed)
-
-
-// function addUser(username, email, password, list){
-//     const newUser = new Object
-//     newUser.username = username
-//     newUser.email = email
-//     newUser.password = password
-    
-//     const newUsers = {...list, [username]: newUser} 
-
-//     return(newUsers)
-// }
-
-// users = addUser("magicgirl4", "magicgirl4@gmail.com", "12345", users)
-// users = addUser("curseyoubale", "magicgirl4@gmail.com", "12345", users)
 
 export {users, artwork};
