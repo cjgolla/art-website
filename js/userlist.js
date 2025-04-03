@@ -17,6 +17,7 @@ let users = {
     honeybuns: {
         username: "honeybuns",
         email: "honeybuns@gmail.com",
+        password: '12345',
         art: [{id: '123856789', title: "Ranni with Boba",
             link: "img11.jpg"}, 
             {id: '397536789', title: "Eda the Owl Lady", link: "img12.jpg"}, 

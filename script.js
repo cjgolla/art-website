@@ -199,26 +199,6 @@ const tagList = [
 
 ]
 
-/*
-for(let art of Object.keys(artwork)){
- 
-  const link = document.createElement("a");
-  link.setAttribute('href', '/art-website/pages/artwork-page/index.html');
-  const img = document.createElement("div");
-
-  link.addEventListener('click', ()=>{
-    localStorage.setItem("current-artwork", art)
-    localStorage.setItem('selected-user', artwork[art])
-  })
-
-  img.setAttribute('style', `background-image: url('/art-website/artwork/${art}')`)
-  img.classList.add("grid-item")
-  link.appendChild(img)
-  grid.appendChild(link)
-}
-*/
-
-
 
 for(let art of Object.keys(artwork)){
 
@@ -237,12 +217,3 @@ for(let art of Object.keys(artwork)){
   link.appendChild(img)
   grid.appendChild(link)
 }
-
-
-
-/*
-images.forEach((img) =>{
-grid.innerHTML += `<a href="/art-website/pages/artwork-page/index.html"><div style="background-image: url('${img.link}')" class="grid-item"></div></a>`
-});
-*/
-///// LOGIN BOX /////

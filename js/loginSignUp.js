@@ -2,6 +2,8 @@ import {users} from "/art-website/js/userlist.js";
 
 let userlist = users;
 
+let loginTabFlag = localStorage.getItem("loginTabFlag");
+
 /////////LOGIN STUFF/////////////
 
 export function signUp(){
@@ -61,6 +63,7 @@ export function inputStuff(){
 
   loginBtn.addEventListener('click', ()=>{
       submitInfo()
+      console.log("SUBMITTED")
 
   })
 
@@ -73,20 +76,19 @@ export function inputStuff(){
 export function submitInfo(){
   const redText = document.querySelector('.redtext')
     redText.classList.remove("hide")
-    redText.textContent = "test to see if buttons work correct info"
+
 
 
   const userNameLogin = document.getElementById("username_login")
   const passwordLogin = document.getElementById("password_login")
-  
-  console.log(passwordLogin.value)
-  console.log(userNameLogin.value)
-  console.log("Poggers")
+
+ 
   let flag = null
-  for (x of Object.keys(userlist)){
+  for (let x of Object.keys(userlist)){
     let i = 0
+    console.log(userlist[x]['username'], userNameLogin.value)
     if(userlist[x]["username"] === userNameLogin.value && userlist[x]["password"] === passwordLogin.value){
-      
+        
       localStorage.setItem("currentUser", JSON.stringify(userlist[x]))
       loginTabFlag = 1
       localStorage.setItem("loginTabFlag", JSON.stringify(loginTabFlag)) 
@@ -108,7 +110,8 @@ const tagsContainer = document.querySelector(".tags-list");
 /**login sign up function */
 
 export function loginSignUp(){
-
+    const moreIcon2 = document.querySelector('.ri-more-2-line')
+    moreIcon2.classList.remove("hide")
   /*variables */
     
     const redText = document.querySelector('.redtext')
@@ -136,9 +139,6 @@ export function loginSignUp(){
     const loginTab = document.querySelector(".login-tab");
     const loginBox = document.querySelector(".login") 
     let login = document.createElement("div")
-
-    
-
 
     let signUp = document.createElement("div")
     signUp.classList.add("login-btn")
@@ -206,18 +206,21 @@ export function loginSignUp(){
 }
 
 export function signOut(){
-  const loginBox = document.querySelector(".login")
-  const notificationTick = document.createElement("div")
-  notificationTick.classList.add("notification-tick")
-  const alerts = document.createElement("div")
-  alerts.classList.add("span-style")
+  const dropdown = document.createElement('div');
+  dropdown.classList.add("dropdown-box");
+  dropdown.classList.add("hide")
 
-  const mailIcon = document.createElement("div")
-  mailIcon.classList.add("span-style")
-  const plusIcon = document.createElement("div")
-  const moreIcon = document.createElement("div")
+  const loginBox = document.querySelector(".login");
+  const notificationTick = document.createElement("div");
+  notificationTick.classList.add("notification-tick");
+  const alerts = document.createElement("div");
+  alerts.classList.add("span-style");
 
-  moreIcon.innerHTML = `<i class="ri-more-2-fill more-icon"></i>`
+  const mailIcon = document.createElement("div");
+  mailIcon.classList.add("span-style");
+  const plusIcon = document.createElement("div");
+  const moreIcon = document.querySelector('.ri-more-2-line')
+    moreIcon.classList.remove("hide")
   plusIcon.classList.add("span-style")
 
   plusIcon.innerHTML = `<span class="span-style">Add Post</span><i class="ri-add-fill"></i>`
@@ -232,7 +235,14 @@ export function signOut(){
   mailIcon.style.fontSize = '20px'
   alerts.innerHTML = `<span class="span-style">Alerts</span><i class="ri-notification-4-line"></i>`
   
-
+  loginBox.appendChild(moreIcon);
+    
+  moreIcon.addEventListener("click", ()=>{
+    dropdown.classList.toggle("hide")
+  })
+  
+  
+  loginBox.appendChild(dropdown)
   signOutButton.addEventListener("click", ()=>{
 
     loginTabFlag = null

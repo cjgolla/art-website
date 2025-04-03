@@ -1,10 +1,10 @@
 ///////JSON LOCALSTORAGE/////////
-import {signUp} from "/art-website/js/loginSignUp.js";
+import {signOut, loginSignUp, inputStuff} from "/art-website/js/loginSignUp.js";
 
 
 window.onload = function(){
 
-  if (localStorage.getItem('loginTablFlag')===null) {
+  if (localStorage.getItem('loginTabFlag') === null) {
     localStorage.setItem('loginTabFlag', null)
   }
   const navBar = document.querySelector(".nav");
@@ -20,7 +20,21 @@ window.onload = function(){
     .then(response => response.text())
     .then(data =>{
       loginSignUpTab.innerHTML = data;
-  signUp()
+
+  let loginTabFlag = JSON.parse(localStorage.getItem('loginTabFlag'));
+
+
+  if(loginTabFlag === null){
+    console.log("ITS DONE")
+    loginSignUp();
+  } else {
+    console.log(loginTabFlag)
+    console.log("WTF")
+    signOut();
+  }
+
+  inputStuff();
+  
 
 })
 .catch(error => console.error(`Error loading login`, error))

@@ -305,6 +305,7 @@ header{
 .nav-dropdown{
     top:79px;
     width:400px;
+    height:400px;
     position: absolute;
     z-index: 10;
     display:none;
@@ -400,14 +401,14 @@ header{
     margin-top: 370px;
     right: 0px;
     padding: 25px;
-    width: auto;
+    width: 100px;
     height: 240px;
     background-color: var(--black-backdrop);
     border-radius: 0px 0px 15px 15px;
     backdrop-filter: blur(10px);
     z-index: 10;
     position: absolute;
-    display:none;
+    
 }
 
 .overlay{
