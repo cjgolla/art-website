@@ -109,6 +109,23 @@ const tagsContainer = document.querySelector(".tags-list");
 
 /**login sign up function */
 
+/**overlay toggle */
+
+let overlayBool = false;
+
+function overlayToggle(){
+
+        const overlay = document.getElementById("overlay-dropdown")
+        overlay.classList.remove("hide")
+        overlay.addEventListener('click', ()=>{
+            overlay.classList.add('hide')
+            
+        })
+       
+}
+
+
+
 export function loginSignUp(){
     const moreIcon2 = document.querySelector('.ri-more-2-line')
     moreIcon2.classList.remove("hide")
@@ -205,7 +222,10 @@ export function loginSignUp(){
 
 }
 
+/*SIGNOUT FUNCTION */
+
 export function signOut(){
+    arrowFunc();
   const dropdown = document.createElement('div');
   dropdown.classList.add("dropdown-box");
   dropdown.classList.add("hide")
@@ -236,9 +256,14 @@ export function signOut(){
   alerts.innerHTML = `<span class="span-style">Alerts</span><i class="ri-notification-4-line"></i>`
   
   loginBox.appendChild(moreIcon);
+  dropdown.appendChild(mailIcon);
+  dropdown.appendChild(plusIcon);
+  dropdown.appendChild(signOutButton)
     
   moreIcon.addEventListener("click", ()=>{
-    dropdown.classList.toggle("hide")
+
+    overlayToggle()
+    
   })
   
   
@@ -253,4 +278,11 @@ export function signOut(){
   })
 
   const body = document.body
+}
+
+/*ARROW FUNCTION */
+function arrowFunc(){
+    document.querySelector(".arrow").addEventListener('click', ()=>{
+        overlayToggle();
+    })
 }
