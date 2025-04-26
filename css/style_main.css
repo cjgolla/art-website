@@ -207,7 +207,7 @@ input, select{
     
 }
 .title-dropdown{
-    display: none;
+  
     position: absolute;
     bottom:10000px;
     padding:10px;

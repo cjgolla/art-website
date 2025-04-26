@@ -116,7 +116,7 @@ input, select{
     color: rgb(19, 30, 55)
 }
 .login-wrapper{
-  
+    
     position:relative;
     margin:auto;
     color:rgb(42, 42, 42);
@@ -315,7 +315,7 @@ header{
     width:150px;
 }
 .title-dropdown{
-    display: none;
+
     position: absolute;
     bottom:10000px;
     padding:10px;

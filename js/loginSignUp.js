@@ -114,11 +114,15 @@ const tagsContainer = document.querySelector(".tags-list");
 let overlayBool = false;
 
 function overlayToggle(){
-
-        const overlay = document.getElementById("overlay-dropdown")
-        overlay.classList.remove("hide")
+  const dropdownItem = document.querySelector(".title-dropdown")
+  const dropdownBox = document.querySelector(".dropdown-box")
+  const overlay = document.getElementById("overlay-dropdown")
+        overlay.classList.toggle("hide")
         overlay.addEventListener('click', ()=>{
+          dropdownItem.classList.add('hide')
+          dropdownBox.classList.add('hide')
             overlay.classList.add('hide')
+            
             
         })
        
@@ -217,7 +221,7 @@ export function loginSignUp(){
     })
     
     arrow.addEventListener("click", ()=>{
-      dropdownItem.classList.toggle("display")
+      dropdownItem.classList.toggle("hide")
     })
 
 }
@@ -225,7 +229,7 @@ export function loginSignUp(){
 /*SIGNOUT FUNCTION */
 
 export function signOut(){
-    arrowFunc();
+  arrowFunc();
   const dropdown = document.createElement('div');
   dropdown.classList.add("dropdown-box");
   dropdown.classList.add("hide")
@@ -235,6 +239,8 @@ export function signOut(){
   notificationTick.classList.add("notification-tick");
   const alerts = document.createElement("div");
   alerts.classList.add("span-style");
+
+  const overlay = document.getElementById("overlay-dropdown")
 
   const mailIcon = document.createElement("div");
   mailIcon.classList.add("span-style");
@@ -259,9 +265,14 @@ export function signOut(){
   dropdown.appendChild(mailIcon);
   dropdown.appendChild(plusIcon);
   dropdown.appendChild(signOutButton)
-    
-  moreIcon.addEventListener("click", ()=>{
+  
 
+  overlay.addEventListener("click", ()=> {
+    
+  })
+  moreIcon.addEventListener("click", ()=>{
+    dropdown.classList.toggle("hide")
+    
     overlayToggle()
     
   })
@@ -283,6 +294,8 @@ export function signOut(){
 /*ARROW FUNCTION */
 function arrowFunc(){
     document.querySelector(".arrow").addEventListener('click', ()=>{
+        const dropdownItem = document.querySelector(".title-dropdown")
+        dropdownItem.classList.toggle("hide")
         overlayToggle();
     })
 }
