@@ -341,14 +341,14 @@ textarea{
     }
     .main-art-info{
         display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
     .main-art-wrapper{
        
         max-height:600px;
     }
-    .main-art-profile{
-        display:none;
-    }
+    
     .nav-list{
         display: flex;
         
@@ -461,6 +461,11 @@ textarea{
     .other-artwork-grid{
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         
+    }
+    .main-art-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
 @media (max-width:350px){
