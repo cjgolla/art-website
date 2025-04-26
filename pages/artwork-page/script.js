@@ -1,4 +1,4 @@
-import {users, artwork} from "/art-website/userlist.js";
+import {users, artwork} from "../../js/userlist.js";
 
 
 
