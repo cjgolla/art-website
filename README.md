@@ -9,6 +9,7 @@ IMPORTANT:
 
 
 Features:
+---------
 -to try out the login feature, type in honeybuns for the username and 12345 for the password. 
 -This app utilizes local storage to let the app know if a user is logged in and to fetch the name of the user. I've utilized a locally stored loginTabFlag variable which switches between null and 1 depending on if the user is logged in or not. Despite the fact that the username is also
 stored in the local storage, it practically serves no purpose. 
