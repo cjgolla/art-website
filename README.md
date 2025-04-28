@@ -1,4 +1,5 @@
 This is my art website which allows you to log into an account and view some of the artwork displayed.
+Github Pages is used to display the frontpage, artpage and profile pages.
 
 
 IMPORTANT:
